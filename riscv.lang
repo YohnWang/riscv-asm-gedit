@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This program is free software. It comes without any warranty, to
+     the extent permitted by applicable law. You can redistribute it
+     and/or modify it under the terms of the Do What The Fuck You Want
+     To Public License, Version 2, as published by Sam Hocevar. See
+     http://www.wtfpl.net/ for more details. -->
+<!DOCTYPE language SYSTEM "language.dtd">
+<language id="riscv" _name="riscv" version="2.0" _section="Sources">
+	<metadata>
+		<property name="mimetypes">text/x-arm-asm</property>
+    	<property name="globs">*.S</property>
+	</metadata>
+
+	<styles>
+		<style id="comment" _name="Comment" map-to="def:comment"/>
+		<style id="string" _name="String" map-to="def:string"/>
+		<style id="escaped-character" _name="Escaped Character" map-to="def:special-char"/>
+		<style id="preprocessor" _name="Preprocessor" map-to="def:preprocessor"/>
+		<style id="included-file" _name="Included File" map-to="def:string"/>
+		<style id="char" _name="Character" map-to="def:character"/>
+		<style id="keyword" _name="Keyword" map-to="def:keyword"/>
+		<style id="type" _name="Directive" map-to="def:type"/>
+		<style id="number" _name="number" map-to="def:base-n-integer"/>
+		<style id="function" _name="Function" map-to="def:function"/>
+	</styles>
+
+    <default-regex-options case-sensitive="false"/>
+
+	<definitions>
+		<context id="riscv">
+			<include>
+				<context id="comment" style-ref="comment">
+					<start>@</start>
+					<end>$</end>
+				</context>
+				<context id="string" end-at-line-end="true" style-ref="string">
+					<start>"</start>
+					<end>"</end>
+					<include>
+						<context id="escape" style-ref="escaped-character">
+							<match>\\.</match>
+						</context>
+					</include>
+				</context>
+				<context id="comment-multiline" style-ref="comment">
+					<start>\/\*</start>
+					<end>\*\/</end>
+				</context>
+				<context id="operators" style-ref="keyword">
+					<keyword>add</keyword>
+					<keyword>addi</keyword>
+					<keyword>addiw</keyword>
+					<keyword>addw</keyword>
+					<keyword>amoadd</keyword>
+					<keyword>amoadd</keyword>
+					<keyword>amoand</keyword>
+					<keyword>amoand</keyword>
+					<keyword>amomaxu</keyword>
+					<keyword>amomaxu</keyword>
+					<keyword>amomax</keyword>
+					<keyword>amomax</keyword>
+					<keyword>amominu</keyword>
+					<keyword>amominu</keyword>
+					<keyword>amomin</keyword>
+					<keyword>amomin</keyword>
+					<keyword>amoor</keyword>
+					<keyword>amoor</keyword>
+					<keyword>amoswap</keyword>
+					<keyword>amoswap</keyword>
+					<keyword>amoxor</keyword>
+					<keyword>amoxor</keyword>
+					<keyword>and</keyword>
+					<keyword>andi</keyword>
+					<keyword>auipc</keyword>
+					<keyword>beq</keyword>
+					<keyword>bge</keyword>
+					<keyword>bgeu</keyword>
+					<keyword>blt</keyword>
+					<keyword>bltu</keyword>
+					<keyword>bne</keyword>
+					<keyword>csrrc</keyword>
+					<keyword>csrrci</keyword>
+					<keyword>csrrs</keyword>
+					<keyword>csrrsi</keyword>
+					<keyword>csrrw</keyword>
+					<keyword>csrrwi</keyword>
+					<keyword>div</keyword>
+					<keyword>divu</keyword>
+					<keyword>divuw</keyword>
+					<keyword>divw</keyword>
+					<keyword>dret</keyword>
+					<keyword>ebreak</keyword>
+					<keyword>ecall</keyword>
+					<keyword>fadd</keyword>
+					<keyword>fadd</keyword>
+					<keyword>fadd</keyword>
+					<keyword>fclass</keyword>
+					<keyword>fclass</keyword>
+					<keyword>fclass</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fcvt</keyword>
+					<keyword>fdiv</keyword>
+					<keyword>fdiv</keyword>
+					<keyword>fdiv</keyword>
+					<keyword>fence</keyword>
+					<keyword>fence</keyword>
+					<keyword>feq</keyword>
+					<keyword>feq</keyword>
+					<keyword>feq</keyword>
+					<keyword>fld</keyword>
+					<keyword>fle</keyword>
+					<keyword>fle</keyword>
+					<keyword>fle</keyword>
+					<keyword>flq</keyword>
+					<keyword>flt</keyword>
+					<keyword>flt</keyword>
+					<keyword>flt</keyword>
+					<keyword>flw</keyword>
+					<keyword>fmadd</keyword>
+					<keyword>fmadd</keyword>
+					<keyword>fmadd</keyword>
+					<keyword>fmax</keyword>
+					<keyword>fmax</keyword>
+					<keyword>fmax</keyword>
+					<keyword>fmin</keyword>
+					<keyword>fmin</keyword>
+					<keyword>fmin</keyword>
+					<keyword>fmsub</keyword>
+					<keyword>fmsub</keyword>
+					<keyword>fmsub</keyword>
+					<keyword>fmul</keyword>
+					<keyword>fmul</keyword>
+					<keyword>fmul</keyword>
+					<keyword>fmv</keyword>
+					<keyword>fmv</keyword>
+					<keyword>fmv</keyword>
+					<keyword>fmv</keyword>
+					<keyword>fnmadd</keyword>
+					<keyword>fnmadd</keyword>
+					<keyword>fnmadd</keyword>
+					<keyword>fnmsub</keyword>
+					<keyword>fnmsub</keyword>
+					<keyword>fnmsub</keyword>
+					<keyword>fsd</keyword>
+					<keyword>fsgnjn</keyword>
+					<keyword>fsgnjn</keyword>
+					<keyword>fsgnjn</keyword>
+					<keyword>fsgnjx</keyword>
+					<keyword>fsgnjx</keyword>
+					<keyword>fsgnjx</keyword>
+					<keyword>fsgnj</keyword>
+					<keyword>fsgnj</keyword>
+					<keyword>fsgnj</keyword>
+					<keyword>fsq</keyword>
+					<keyword>fsqrt</keyword>
+					<keyword>fsqrt</keyword>
+					<keyword>fsqrt</keyword>
+					<keyword>fsub</keyword>
+					<keyword>fsub</keyword>
+					<keyword>fsub</keyword>
+					<keyword>fsw</keyword>
+					<keyword>jal</keyword>
+					<keyword>jalr</keyword>
+					<keyword>lb</keyword>
+					<keyword>lbu</keyword>
+					<keyword>ld</keyword>
+					<keyword>lh</keyword>
+					<keyword>lhu</keyword>
+					<keyword>lr</keyword>
+					<keyword>lr</keyword>
+					<keyword>lui</keyword>
+					<keyword>lw</keyword>
+					<keyword>lwu</keyword>
+					<keyword>mret</keyword>
+					<keyword>mul</keyword>
+					<keyword>mulh</keyword>
+					<keyword>mulhsu</keyword>
+					<keyword>mulhu</keyword>
+					<keyword>mulw</keyword>
+					<keyword>or</keyword>
+					<keyword>ori</keyword>
+					<keyword>rem</keyword>
+					<keyword>remu</keyword>
+					<keyword>remuw</keyword>
+					<keyword>remw</keyword>
+					<keyword>sb</keyword>
+					<keyword>sc</keyword>
+					<keyword>sc</keyword>
+					<keyword>sd</keyword>
+					<keyword>sfence</keyword>
+					<keyword>sh</keyword>
+					<keyword>sll</keyword>
+					<keyword>slli</keyword>
+					<keyword>slliw</keyword>
+					<keyword>sllw</keyword>
+					<keyword>slt</keyword>
+					<keyword>slti</keyword>
+					<keyword>sltiu</keyword>
+					<keyword>sltu</keyword>
+					<keyword>sra</keyword>
+					<keyword>srai</keyword>
+					<keyword>sraiw</keyword>
+					<keyword>sraw</keyword>
+					<keyword>sret</keyword>
+					<keyword>srl</keyword>
+					<keyword>srli</keyword>
+					<keyword>srliw</keyword>
+					<keyword>srlw</keyword>
+					<keyword>sub</keyword>
+					<keyword>subw</keyword>
+					<keyword>sw</keyword>
+					<keyword>wfi</keyword>
+					<keyword>xor</keyword>
+					<keyword>xori</keyword>
+				</context>
+				<context id="xoperators" style-ref="keyword">
+					<keyword>li</keyword>
+					<keyword>la</keyword>
+					<keyword>csrr</keyword>
+					<keyword>csrw</keyword>
+					<keyword>csrs</keyword>
+					<keyword>csrc</keyword>
+					<keyword>csrwi</keyword>
+					<keyword>csrsi</keyword>
+					<keyword>csrci</keyword>
+					<keyword>bnez</keyword>
+					<keyword>beqz</keyword>
+					<keyword>ble</keyword>
+					<keyword>bgt</keyword>
+					<keyword>bleu</keyword>
+					<keyword>bgtu</keyword>
+					<keyword>ret</keyword>
+					<keyword>j</keyword>
+					<keyword>jr</keyword>
+					<keyword>call</keyword>
+					<keyword>tail</keyword>
+					<keyword>nop</keyword>
+					<keyword>mv</keyword>
+					<keyword>not</keyword>
+					<keyword>neg</keyword>
+					<keyword>negw</keyword>
+				</context>
+				<context id="preprocessor" style-ref="preprocessor">
+					<prefix>^#</prefix>
+					<keyword>if</keyword>
+        			<keyword>ifdef</keyword>
+        			<keyword>ifndef</keyword>
+        			<keyword>else</keyword>
+        			<keyword>elif</keyword>
+        			<keyword>define</keyword>
+        			<keyword>endif</keyword>
+        			<keyword>undef</keyword>
+        			<keyword>error</keyword>
+        			<keyword>pragma</keyword>
+        			<keyword>line</keyword>
+        		</context>
+        		<context id="registers" style-ref="preprocessor">
+        			<keyword>x[0-9]+</keyword>
+        			<keyword>zero</keyword>
+					<keyword>ra</keyword>
+					<keyword>sp</keyword>
+					<keyword>gp</keyword>
+					<keyword>tp</keyword>
+					<keyword>t0</keyword>
+					<keyword>t1</keyword>
+					<keyword>t2</keyword>
+					<keyword>s0</keyword>
+					<keyword>fp</keyword>
+					<keyword>s1</keyword>
+					<keyword>a0</keyword>
+					<keyword>a1</keyword>
+					<keyword>a2</keyword>
+					<keyword>a3</keyword>
+					<keyword>a4</keyword>
+					<keyword>a5</keyword>
+					<keyword>a6</keyword>
+					<keyword>a7</keyword>
+					<keyword>s2</keyword>
+					<keyword>s3</keyword>
+					<keyword>s4</keyword>
+					<keyword>s5</keyword>
+					<keyword>s6</keyword>
+					<keyword>s7</keyword>
+					<keyword>s8</keyword>
+					<keyword>s9</keyword>
+					<keyword>s10</keyword>
+					<keyword>s11</keyword>
+					<keyword>t3</keyword>
+					<keyword>t4</keyword>
+					<keyword>t5</keyword>
+					<keyword>t6</keyword>
+        			<keyword>mstatus</keyword>
+        			<keyword>mepc</keyword>
+        			<keyword>mtvec</keyword>
+        		</context>
+        		<context id="directives" style-ref="type">
+        			<prefix>\.?</prefix>
+					<keyword>align</keyword>
+					<keyword>file</keyword>
+					<keyword>globl</keyword>
+					<keyword>local</keyword>
+					<keyword>comm</keyword>
+					<keyword>common</keyword>
+					<keyword>ident</keyword>
+					<keyword>section</keyword>
+					<keyword>size</keyword>
+					<keyword>text</keyword>
+					<keyword>data</keyword>
+					<keyword>rodata</keyword>
+					<keyword>bss</keyword>
+					<keyword>string</keyword>
+					<keyword>asciz</keyword>
+					<keyword>equ</keyword>
+					<keyword>macro</keyword>
+					<keyword>endm</keyword>
+					<keyword>type</keyword>
+					<keyword>option</keyword>
+					<keyword>byte</keyword>
+					<keyword>2byte</keyword>
+					<keyword>half</keyword>
+					<keyword>short</keyword>
+					<keyword>4byte</keyword>
+					<keyword>word</keyword>
+					<keyword>long</keyword>
+					<keyword>8byte</keyword>
+					<keyword>dword</keyword>
+					<keyword>quad</keyword>
+					<keyword>dtprelword</keyword>
+					<keyword>dtpreldword</keyword>
+					<keyword>sleb128</keyword>
+					<keyword>uleb128</keyword>
+					<keyword>p2align</keyword>
+					<keyword>balign</keyword>
+					<keyword>zero</keyword>
+        		</context>
+        		
+        		<context id="numlabel" style-ref="function">
+    				<match extended="true">[0-9]+(f|b)</match>
+    			</context>
+    			
+    			<context id="xnumlabel" style-ref="function">
+    				<match extended="true">[0-9]+:</match>
+    			</context>
+        		
+        		<context id="hexadecimal" style-ref="number">
+        			<match extended="true">0x[a-f0-9]+</match>
+    			</context>
+    			<context id="binary" style-ref="number">
+        			<match extended="true">0b[0-1]+</match>
+    			</context>
+    			<context id="integer" style-ref="number">
+        			<match extended="true">[0-9]+</match>
+    			</context>
+    			<context id="label" style-ref="function">
+    				<match>.*:</match>
+    			</context>
+    			
+    			
+    			
+    			<context id="func" style-ref="function">
+    				<prefix>%?</prefix>
+    				<keyword>hi</keyword>
+    				<keyword>lo</keyword>
+    				<keyword>pcrel_hi</keyword>
+    				<keyword>pcrel_lo</keyword>
+    				<keyword>tprel_hi</keyword>
+    				<keyword>tprel_lo</keyword>
+    				<keyword>tprel_add</keyword>
+    				<keyword>tls_ie_pcrel_hi</keyword>
+    				<keyword>tls_gd_pcrel_hi</keyword>
+    				<keyword>got_pcrel_hi</keyword>
+    			</context>
+			</include>
+		</context>
+	</definitions>
+</language>
