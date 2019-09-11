@@ -6,7 +6,7 @@ RISC-V汇编在gedit编辑器中的语法高亮，只需把文件`riscv.lang`拷
 
 寄存器仅含有通用寄存器，浮点寄存器和控制与状态寄存器也不完善
 
-> RISC-V assembly highlight for gedit, you just copy file `riscv.lang` to `/usr/share/gtksourceview-3.0/language-specs`.
+> It is RISC-V assembly highlight for gedit, you just copy file `riscv.lang` to `/usr/share/gtksourceview-3.0/language-specs`.
 >
 > Instructions is incomplete. They are from floder `insn` of project `spike`.The pseudo-instruction only extracts some of the commonly used instructions in the manual.
 >
@@ -16,7 +16,8 @@ RISC-V汇编在gedit编辑器中的语法高亮，只需把文件`riscv.lang`拷
 
 ### [riscv/riscv-isa-sim](https://github.com/riscv/riscv-isa-sim)
 
-### [riscv-asm-manual](https://github.com/riscv/riscv-asm-manual)
+### [riscv/riscv-asm-manual](https://github.com/riscv/riscv-asm-manual)
 
 ### [riscv/riscv-isa-manual](https://github.com/riscv/riscv-isa-manual)
 
+### [shinyquagsire23/asm-language](https://github.com/shinyquagsire23/asm-language)
