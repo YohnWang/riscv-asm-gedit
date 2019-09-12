@@ -20,7 +20,7 @@
 		<style id="function" _name="Function" map-to="def:function"/>
 	</styles>
 
-    <default-regex-options case-sensitive="false"/>
+    <default-regex-options case-sensitive="true"/>
 
 	<definitions>
 		<context id="riscv">
@@ -40,107 +40,211 @@
 					<end>\*\/</end>
 				</context>
 				<context id="operators" style-ref="keyword">
-					<keyword>add</keyword>
-					<keyword>addi</keyword>
-					<keyword>addiw</keyword>
-					<keyword>addw</keyword>
-					<keyword>amoadd</keyword>
-					<keyword>amoadd</keyword>
-					<keyword>amoand</keyword>
-					<keyword>amoand</keyword>
-					<keyword>amomaxu</keyword>
-					<keyword>amomaxu</keyword>
-					<keyword>amomax</keyword>
-					<keyword>amomax</keyword>
-					<keyword>amominu</keyword>
-					<keyword>amominu</keyword>
-					<keyword>amomin</keyword>
-					<keyword>amomin</keyword>
-					<keyword>amoor</keyword>
-					<keyword>amoor</keyword>
-					<keyword>amoswap</keyword>
-					<keyword>amoswap</keyword>
-					<keyword>amoxor</keyword>
-					<keyword>amoxor</keyword>
-					<keyword>and</keyword>
-					<keyword>andi</keyword>
+					<keyword>lui</keyword>
 					<keyword>auipc</keyword>
-					<keyword>beq</keyword>
-					<keyword>bge</keyword>
-					<keyword>bgeu</keyword>
-					<keyword>blt</keyword>
-					<keyword>bltu</keyword>
-					<keyword>bne</keyword>
-					<keyword>csrrc</keyword>
-					<keyword>csrrci</keyword>
-					<keyword>csrrs</keyword>
-					<keyword>csrrsi</keyword>
-					<keyword>csrrw</keyword>
-					<keyword>csrrwi</keyword>
-					<keyword>div</keyword>
-					<keyword>divu</keyword>
-					<keyword>divuw</keyword>
-					<keyword>divw</keyword>
-					<keyword>dret</keyword>
-					<keyword>ebreak</keyword>
-					<keyword>ecall</keyword>
 					<keyword>jal</keyword>
 					<keyword>jalr</keyword>
+					<keyword>beq</keyword>
+					<keyword>bne</keyword>
+					<keyword>blt</keyword>
+					<keyword>bge</keyword>
+					<keyword>bltu</keyword>
+					<keyword>bgeu</keyword>
 					<keyword>lb</keyword>
-					<keyword>lbu</keyword>
-					<keyword>ld</keyword>
 					<keyword>lh</keyword>
-					<keyword>lhu</keyword>
-					<keyword>lr</keyword>
-					<keyword>lr</keyword>
-					<keyword>lui</keyword>
 					<keyword>lw</keyword>
+					<keyword>lbu</keyword>
+					<keyword>lhu</keyword>
+					<keyword>sb</keyword>
+					<keyword>sh</keyword>
+					<keyword>sw</keyword>
+					<keyword>addi</keyword>
+					<keyword>slti</keyword>
+					<keyword>sltiu</keyword>
+					<keyword>xori</keyword>
+					<keyword>ori</keyword>
+					<keyword>andi</keyword>
+					<keyword>slli</keyword>
+					<keyword>srli</keyword>
+					<keyword>srai</keyword>
+					<keyword>add</keyword>
+					<keyword>sub</keyword>
+					<keyword>sll</keyword>
+					<keyword>slt</keyword>
+					<keyword>sltu</keyword>
+					<keyword>xor</keyword>
+					<keyword>srl</keyword>
+					<keyword>sra</keyword>
+					<keyword>or</keyword>
+					<keyword>and</keyword>
+					<keyword>fence</keyword>
+					<keyword>ecall</keyword>
+					<keyword>ebreak</keyword>
 					<keyword>lwu</keyword>
-					<keyword>mret</keyword>
+					<keyword>ld</keyword>
+					<keyword>sd</keyword>
+					<keyword>slli</keyword>
+					<keyword>srli</keyword>
+					<keyword>srai</keyword>
+					<keyword>addiw</keyword>
+					<keyword>slliw</keyword>
+					<keyword>srliw</keyword>
+					<keyword>sraiw</keyword>
+					<keyword>addw</keyword>
+					<keyword>subw</keyword>
+					<keyword>sllw</keyword>
+					<keyword>srlw</keyword>
+					<keyword>sraw</keyword>
+					<keyword>fence.i</keyword>
+					<keyword>csrrw</keyword>
+					<keyword>csrrs</keyword>
+					<keyword>csrrc</keyword>
+					<keyword>csrrwi</keyword>
+					<keyword>csrrsi</keyword>
+					<keyword>csrrci</keyword>
 					<keyword>mul</keyword>
 					<keyword>mulh</keyword>
 					<keyword>mulhsu</keyword>
 					<keyword>mulhu</keyword>
-					<keyword>mulw</keyword>
-					<keyword>or</keyword>
-					<keyword>ori</keyword>
+					<keyword>div</keyword>
+					<keyword>divu</keyword>
 					<keyword>rem</keyword>
 					<keyword>remu</keyword>
-					<keyword>remuw</keyword>
+					<keyword>mulw</keyword>
+					<keyword>divw</keyword>
+					<keyword>divuw</keyword>
 					<keyword>remw</keyword>
-					<keyword>sb</keyword>
-					<keyword>sc</keyword>
-					<keyword>sc</keyword>
-					<keyword>sd</keyword>
-					<keyword>sfence</keyword>
-					<keyword>sh</keyword>
-					<keyword>sll</keyword>
-					<keyword>slli</keyword>
-					<keyword>slliw</keyword>
-					<keyword>sllw</keyword>
-					<keyword>slt</keyword>
-					<keyword>slti</keyword>
-					<keyword>sltiu</keyword>
-					<keyword>sltu</keyword>
-					<keyword>sra</keyword>
-					<keyword>srai</keyword>
-					<keyword>sraiw</keyword>
-					<keyword>sraw</keyword>
+					<keyword>remuw</keyword>
+					<keyword>lr.w</keyword>
+					<keyword>sc.w</keyword>
+					<keyword>amoswap.w</keyword>
+					<keyword>amoadd.w</keyword>
+					<keyword>amoxor.w</keyword>
+					<keyword>amoand.w</keyword>
+					<keyword>amoor.w</keyword>
+					<keyword>amomin.w</keyword>
+					<keyword>amomax.w</keyword>
+					<keyword>amominu.w</keyword>
+					<keyword>amomaxu.w</keyword>
+					<keyword>lr.d</keyword>
+					<keyword>sc.d</keyword>
+					<keyword>amoswap.d</keyword>
+					<keyword>amoadd.d</keyword>
+					<keyword>amoxor.d</keyword>
+					<keyword>amoand.d</keyword>
+					<keyword>amoor.d</keyword>
+					<keyword>amomin.d</keyword>
+					<keyword>amomax.d</keyword>
+					<keyword>amominu.d</keyword>
+					<keyword>amomaxu.d</keyword>
+					<keyword>flw</keyword>
+					<keyword>fsw</keyword>
+					<keyword>fmadd.s</keyword>
+					<keyword>fmsub.s</keyword>
+					<keyword>fnmsub.s</keyword>
+					<keyword>fnmadd.s</keyword>
+					<keyword>fadd.s</keyword>
+					<keyword>fsub.s</keyword>
+					<keyword>fmul.s</keyword>
+					<keyword>fdiv.s</keyword>
+					<keyword>fsqrt.s</keyword>
+					<keyword>fsgnj.s</keyword>
+					<keyword>fsgnjn.s</keyword>
+					<keyword>fsgnjx.s</keyword>
+					<keyword>fmin.s</keyword>
+					<keyword>fmax.s</keyword>
+					<keyword>fcvt.w.s</keyword>
+					<keyword>fcvt.wu.s</keyword>
+					<keyword>fmv.x.w</keyword>
+					<keyword>feq.s</keyword>
+					<keyword>flt.s</keyword>
+					<keyword>fle.s</keyword>
+					<keyword>fclass.s</keyword>
+					<keyword>fcvt.s.w</keyword>
+					<keyword>fcvt.s.wu</keyword>
+					<keyword>fmv.w.x</keyword>
+					<keyword>fcvt.l.s</keyword>
+					<keyword>fcvt.lu.s</keyword>
+					<keyword>fcvt.s.l</keyword>
+					<keyword>fcvt.s.lu</keyword>
+					<keyword>fld</keyword>
+					<keyword>fsd</keyword>
+					<keyword>fmadd.d</keyword>
+					<keyword>fmsub.d</keyword>
+					<keyword>fnmsub.d</keyword>
+					<keyword>fnmadd.d</keyword>
+					<keyword>fadd.d</keyword>
+					<keyword>fsub.d</keyword>
+					<keyword>fmul.d</keyword>
+					<keyword>fdiv.d</keyword>
+					<keyword>fsqrt.d</keyword>
+					<keyword>fsgnj.d</keyword>
+					<keyword>fsgnjn.d</keyword>
+					<keyword>fsgnjx.d</keyword>
+					<keyword>fmin.d</keyword>
+					<keyword>fmax.d</keyword>
+					<keyword>fcvt.s.d</keyword>
+					<keyword>fcvt.d.s</keyword>
+					<keyword>feq.d</keyword>
+					<keyword>flt.d</keyword>
+					<keyword>fle.d</keyword>
+					<keyword>fclass.d</keyword>
+					<keyword>fcvt.w.d</keyword>
+					<keyword>fcvt.wu.d</keyword>
+					<keyword>fcvt.d.w</keyword>
+					<keyword>fcvt.d.wu</keyword>
+					<keyword>fcvt.l.d</keyword>
+					<keyword>fcvt.lu.d</keyword>
+					<keyword>fmv.x.d</keyword>
+					<keyword>fcvt.d.l</keyword>
+					<keyword>fcvt.d.lu</keyword>
+					<keyword>fmv.d.x</keyword>
+					<keyword>flq</keyword>
+					<keyword>fsq</keyword>
+					<keyword>fmadd.q</keyword>
+					<keyword>fmsub.q</keyword>
+					<keyword>fnmsub.q</keyword>
+					<keyword>fnmadd.q</keyword>
+					<keyword>fadd.q</keyword>
+					<keyword>fsub.q</keyword>
+					<keyword>fmul.q</keyword>
+					<keyword>fdiv.q</keyword>
+					<keyword>fsqrt.q</keyword>
+					<keyword>fsgnj.q</keyword>
+					<keyword>fsgnjn.q</keyword>
+					<keyword>fsgnjx.q</keyword>
+					<keyword>fmin.q</keyword>
+					<keyword>fmax.q</keyword>
+					<keyword>fcvt.s.q</keyword>
+					<keyword>fcvt.q.s</keyword>
+					<keyword>fcvt.d.q</keyword>
+					<keyword>fcvt.q.d</keyword>
+					<keyword>feq.q</keyword>
+					<keyword>flt.q</keyword>
+					<keyword>fle.q</keyword>
+					<keyword>fclass.q</keyword>
+					<keyword>fcvt.w.q</keyword>
+					<keyword>fcvt.wu.q</keyword>
+					<keyword>fcvt.q.w</keyword>
+					<keyword>fcvt.q.wu</keyword>
+					<keyword>fcvt.l.q</keyword>
+					<keyword>fcvt.lu.q</keyword>
+					<keyword>fcvt.q.l</keyword>
+					<keyword>fcvt.q.lu</keyword>
+					
+					<keyword>uret</keyword>
 					<keyword>sret</keyword>
-					<keyword>srl</keyword>
-					<keyword>srli</keyword>
-					<keyword>srliw</keyword>
-					<keyword>srlw</keyword>
-					<keyword>sub</keyword>
-					<keyword>subw</keyword>
-					<keyword>sw</keyword>
+					<keyword>mret</keyword>
 					<keyword>wfi</keyword>
-					<keyword>xor</keyword>
-					<keyword>xori</keyword>
+					<keyword>sfence.vma</keyword>
+					<keyword>hfence.bvam</keyword>
+					<keyword>hfence.gvam</keyword>
+					
 				</context>
 				<context id="xoperators" style-ref="keyword">
 					<keyword>li</keyword>
 					<keyword>la</keyword>
+					<keyword>lla</keyword>
 					<keyword>csrr</keyword>
 					<keyword>csrw</keyword>
 					<keyword>csrs</keyword>
@@ -190,6 +294,17 @@
 					<keyword>rdtimeh</keyword>
 					<keyword>rdcycleh</keyword>
 					<keyword>rdinstreth</keyword>
+					
+					<keyword>frcsr</keyword>
+					<keyword>fscsr</keyword>
+					<keyword>fscsr</keyword>
+					<keyword>frrm</keyword>
+					<keyword>fsrm</keyword> 
+					<keyword>fsrm</keyword> 
+					<keyword>frflags</keyword> 
+					<keyword>fsflags</keyword>
+					<keyword>fsflags</keyword>
+
 
 				</context>
 				<context id="preprocessor" style-ref="preprocessor">
@@ -219,7 +334,39 @@
 				</context>
         		
         		<context id="registers" style-ref="preprocessor">
-        			<keyword>x[0-9]+</keyword>
+                    <keyword>x0</keyword>
+                    <keyword>x1</keyword>
+                    <keyword>x2</keyword>
+                    <keyword>x3</keyword>
+                    <keyword>x4</keyword>
+                    <keyword>x5</keyword>
+                    <keyword>x6</keyword>
+                    <keyword>x7</keyword>
+                    <keyword>x8</keyword>
+                    <keyword>x9</keyword>
+                    <keyword>x10</keyword>
+                    <keyword>x11</keyword>
+                    <keyword>x12</keyword>
+                    <keyword>x13</keyword>
+                    <keyword>x14</keyword>
+                    <keyword>x15</keyword>
+                    <keyword>x16</keyword>
+                    <keyword>x17</keyword>
+                    <keyword>x18</keyword>
+                    <keyword>x19</keyword>
+                    <keyword>x20</keyword>
+                    <keyword>x21</keyword>
+                    <keyword>x22</keyword>
+                    <keyword>x23</keyword>
+                    <keyword>x24</keyword>
+                    <keyword>x25</keyword>
+                    <keyword>x26</keyword>
+                    <keyword>x27</keyword>
+                    <keyword>x28</keyword>
+                    <keyword>x29</keyword>
+                    <keyword>x30</keyword>
+                    <keyword>x31</keyword>
+
         			<keyword>zero</keyword>
 					<keyword>ra</keyword>
 					<keyword>sp</keyword>
@@ -253,52 +400,331 @@
 					<keyword>t4</keyword>
 					<keyword>t5</keyword>
 					<keyword>t6</keyword>
-        			<keyword>mstatus</keyword>
-        			<keyword>mepc</keyword>
-        			<keyword>mtvec</keyword>
-        			
-        			<keyword>misa</keyword>
-        			<keyword>medeleg</keyword>
-        			<keyword>mideleg</keyword>
-        			<keyword>mie</keyword>
-        			<keyword>mcounteren</keyword>
-        			<keyword>mscratch</keyword>
-        			<keyword>mcause</keyword>
-        			<keyword>mtval</keyword>
-        			
-        			<keyword>mip</keyword>
-        			<keyword>mhartid</keyword>
-        			<keyword>marchid</keyword>
-        			<keyword>mcycle</keyword>
-        			<keyword>minstret</keyword>
-        			<keyword>mcycleh</keyword>
-        			
-        			<keyword>sstatus</keyword>
-        			<keyword>sedeleg</keyword>
-        			<keyword>sideleg</keyword>
-        			<keyword>sie</keyword>
-        			<keyword>stvec</keyword>
-        			<keyword>scounteren</keyword>
-        			<keyword>sscratch</keyword>
-        			<keyword>sepc</keyword>
-        			<keyword>scause</keyword>
-        			<keyword>stval</keyword>
-        			<keyword>sip</keyword>
-        			
+					
+				    <keyword>f0</keyword>
+                    <keyword>f1</keyword>
+                    <keyword>f2</keyword>
+                    <keyword>f3</keyword>
+                    <keyword>f4</keyword>
+                    <keyword>f5</keyword>
+                    <keyword>f6</keyword>
+                    <keyword>f7</keyword>
+                    <keyword>f8</keyword>
+                    <keyword>f9</keyword>
+                    <keyword>f10</keyword>
+                    <keyword>f11</keyword>
+                    <keyword>f12</keyword>
+                    <keyword>f13</keyword>
+                    <keyword>f14</keyword>
+                    <keyword>f15</keyword>
+                    <keyword>f16</keyword>
+                    <keyword>f17</keyword>
+                    <keyword>f18</keyword>
+                    <keyword>f19</keyword>
+                    <keyword>f20</keyword>
+                    <keyword>f21</keyword>
+                    <keyword>f22</keyword>
+                    <keyword>f23</keyword>
+                    <keyword>f24</keyword>
+                    <keyword>f25</keyword>
+                    <keyword>f26</keyword>
+                    <keyword>f27</keyword>
+                    <keyword>f28</keyword>
+                    <keyword>f29</keyword>
+                    <keyword>f30</keyword>
+                    <keyword>f31</keyword>
+
+					
+				    <keyword>ft0</keyword>
+                    <keyword>ft1</keyword>
+                    <keyword>ft2</keyword>
+                    <keyword>ft3</keyword>
+                    <keyword>ft4</keyword>
+                    <keyword>ft5</keyword>
+                    <keyword>ft6</keyword>
+                    <keyword>ft7</keyword>
+                    <keyword>ft8</keyword>
+                    <keyword>ft9</keyword>
+                    <keyword>ft10</keyword>
+                    <keyword>ft11</keyword>
+                    
+                    <keyword>fs0</keyword>
+                    <keyword>fs1</keyword>
+                    <keyword>fs2</keyword>
+                    <keyword>fs3</keyword>
+                    <keyword>fs4</keyword>
+                    <keyword>fs5</keyword>
+                    <keyword>fs6</keyword>
+                    <keyword>fs7</keyword>
+                    <keyword>fs8</keyword>
+                    <keyword>fs9</keyword>
+                    <keyword>fs10</keyword>
+                    <keyword>fs11</keyword>
+                    
+                    <keyword>fa0</keyword>
+                    <keyword>fa1</keyword>
+                    <keyword>fa2</keyword>
+                    <keyword>fa3</keyword>
+                    <keyword>fa4</keyword>
+                    <keyword>fa5</keyword>
+                    <keyword>fa6</keyword>
+                    <keyword>fa7</keyword>
+		
         			<keyword>ustatus</keyword>
-        			<keyword>uie</keyword>
-        			<keyword>utvec</keyword>
-        			
-        			<keyword>uscratch</keyword>
-        			<keyword>uepc</keyword>
-        			<keyword>ucause</keyword>
-        			<keyword>utval</keyword>
-        			<keyword>uip</keyword>
-        			
+					<keyword>uie</keyword>
+					<keyword>utvec</keyword>
+					<keyword>uscratch</keyword>
+					<keyword>uepc</keyword>
+					<keyword>ucause</keyword>
+					<keyword>utval</keyword>
+					<keyword>uip</keyword>
+					<keyword>fflags</keyword>
+					<keyword>frm</keyword>
+					<keyword>fcsr</keyword>
+					<keyword>cycle</keyword>
+					<keyword>time</keyword>
+					<keyword>instret</keyword>
+		            <keyword>hpmcounter3</keyword>
+		            <keyword>hpmcounter4</keyword>
+		            <keyword>hpmcounter5</keyword>
+		            <keyword>hpmcounter6</keyword>
+		            <keyword>hpmcounter7</keyword>
+		            <keyword>hpmcounter8</keyword>
+		            <keyword>hpmcounter9</keyword>
+		            <keyword>hpmcounter10</keyword>
+		            <keyword>hpmcounter11</keyword>
+		            <keyword>hpmcounter12</keyword>
+		            <keyword>hpmcounter13</keyword>
+		            <keyword>hpmcounter14</keyword>
+		            <keyword>hpmcounter15</keyword>
+		            <keyword>hpmcounter16</keyword>
+		            <keyword>hpmcounter17</keyword>
+		            <keyword>hpmcounter18</keyword>
+		            <keyword>hpmcounter19</keyword>
+		            <keyword>hpmcounter20</keyword>
+		            <keyword>hpmcounter21</keyword>
+		            <keyword>hpmcounter22</keyword>
+		            <keyword>hpmcounter23</keyword>
+		            <keyword>hpmcounter24</keyword>
+		            <keyword>hpmcounter25</keyword>
+		            <keyword>hpmcounter26</keyword>
+		            <keyword>hpmcounter27</keyword>
+		            <keyword>hpmcounter28</keyword>
+		            <keyword>hpmcounter29</keyword>
+		            <keyword>hpmcounter30</keyword>
+		            <keyword>hpmcounter31</keyword>
+					
+					<keyword>cycleh</keyword>
+					<keyword>timeh</keyword>
+					<keyword>instreth</keyword>
+		            <keyword>hpmcounter3h</keyword>
+		            <keyword>hpmcounter4h</keyword>
+		            <keyword>hpmcounter5h</keyword>
+		            <keyword>hpmcounter6h</keyword>
+		            <keyword>hpmcounter7h</keyword>
+		            <keyword>hpmcounter8h</keyword>
+		            <keyword>hpmcounter9h</keyword>
+		            <keyword>hpmcounter10h</keyword>
+		            <keyword>hpmcounter11h</keyword>
+		            <keyword>hpmcounter12h</keyword>
+		            <keyword>hpmcounter13h</keyword>
+		            <keyword>hpmcounter14h</keyword>
+		            <keyword>hpmcounter15h</keyword>
+		            <keyword>hpmcounter16h</keyword>
+		            <keyword>hpmcounter17h</keyword>
+		            <keyword>hpmcounter18h</keyword>
+		            <keyword>hpmcounter19h</keyword>
+		            <keyword>hpmcounter20h</keyword>
+		            <keyword>hpmcounter21h</keyword>
+		            <keyword>hpmcounter22h</keyword>
+		            <keyword>hpmcounter23h</keyword>
+		            <keyword>hpmcounter24h</keyword>
+		            <keyword>hpmcounter25h</keyword>
+		            <keyword>hpmcounter26h</keyword>
+		            <keyword>hpmcounter27h</keyword>
+		            <keyword>hpmcounter28h</keyword>
+		            <keyword>hpmcounter29h</keyword>
+		            <keyword>hpmcounter30h</keyword>
+		            <keyword>hpmcounter31h</keyword>
+					
+					<keyword>sstatus</keyword>
+					<keyword>sedeleg</keyword>
+					<keyword>sideleg</keyword>
+					<keyword>sie</keyword>
+					<keyword>stvec</keyword>
+					<keyword>scounteren</keyword>
+					<keyword>sscratch</keyword>
+					<keyword>sepc</keyword>
+					<keyword>scause</keyword>
+					<keyword>stval</keyword>
+					<keyword>sip</keyword>
+					<keyword>satp</keyword>
+					<keyword>hstatus</keyword>
+					<keyword>hedeleg</keyword>
+					<keyword>hideleg</keyword>
+					<keyword>hcounteren</keyword>
+					<keyword>hgatp</keyword>
+					<keyword>htimedelta</keyword>
+					<keyword>htimedeltah</keyword>
+					<keyword>vsstatus</keyword>
+					<keyword>vsie</keyword>
+					<keyword>vstvec</keyword>
+					<keyword>vsscratch</keyword>
+					<keyword>vsepc</keyword>
+					<keyword>vscause</keyword>
+					<keyword>vstval</keyword>
+					<keyword>vsip</keyword>
+					<keyword>vsatp</keyword>
+					<keyword>mvendorid</keyword>
+					<keyword>marchid</keyword>
+					<keyword>mimpid</keyword>
+					<keyword>mhartid</keyword>
+					<keyword>mstatus</keyword>
+					<keyword>misa</keyword>
+					<keyword>medeleg</keyword>
+					<keyword>mideleg</keyword>
+					<keyword>mie</keyword>
+					<keyword>mtvec</keyword>
+					<keyword>mcounteren</keyword>
+					<keyword>mstatush</keyword>
+					<keyword>mscratch</keyword>
+					<keyword>mepc</keyword>
+					<keyword>mcause</keyword>
+					<keyword>mtval</keyword>
+					<keyword>mip</keyword>
+					<keyword>mbase</keyword>
+					<keyword>mbound</keyword>
+					<keyword>mibase</keyword>
+					<keyword>mibound</keyword>
+					<keyword>mdbase</keyword>
+					<keyword>mdbound</keyword>
+					<keyword>pmpcfg0</keyword>
+					<keyword>pmpcfg1</keyword>
+					<keyword>pmpcfg2</keyword>
+					<keyword>pmpcfg3</keyword>
+		            <keyword>pmpaddr0</keyword>
+		            <keyword>pmpaddr1</keyword>
+		            <keyword>pmpaddr2</keyword>
+		            <keyword>pmpaddr3</keyword>
+		            <keyword>pmpaddr4</keyword>
+		            <keyword>pmpaddr5</keyword>
+		            <keyword>pmpaddr6</keyword>
+		            <keyword>pmpaddr7</keyword>
+		            <keyword>pmpaddr8</keyword>
+		            <keyword>pmpaddr9</keyword>
+		            <keyword>pmpaddr10</keyword>
+		            <keyword>pmpaddr11</keyword>
+		            <keyword>pmpaddr12</keyword>
+		            <keyword>pmpaddr13</keyword>
+		            <keyword>pmpaddr14</keyword>
+		            <keyword>pmpaddr15</keyword>
+					
+					<keyword>mcycle</keyword>
+					<keyword>minstret</keyword>
+		            <keyword>mhpmcounter3</keyword>
+		            <keyword>mhpmcounter4</keyword>
+		            <keyword>mhpmcounter5</keyword>
+		            <keyword>mhpmcounter6</keyword>
+		            <keyword>mhpmcounter7</keyword>
+		            <keyword>mhpmcounter8</keyword>
+		            <keyword>mhpmcounter9</keyword>
+		            <keyword>mhpmcounter10</keyword>
+		            <keyword>mhpmcounter11</keyword>
+		            <keyword>mhpmcounter12</keyword>
+		            <keyword>mhpmcounter13</keyword>
+		            <keyword>mhpmcounter14</keyword>
+		            <keyword>mhpmcounter15</keyword>
+		            <keyword>mhpmcounter16</keyword>
+		            <keyword>mhpmcounter17</keyword>
+		            <keyword>mhpmcounter18</keyword>
+		            <keyword>mhpmcounter19</keyword>
+		            <keyword>mhpmcounter20</keyword>
+		            <keyword>mhpmcounter21</keyword>
+		            <keyword>mhpmcounter22</keyword>
+		            <keyword>mhpmcounter23</keyword>
+		            <keyword>mhpmcounter24</keyword>
+		            <keyword>mhpmcounter25</keyword>
+		            <keyword>mhpmcounter26</keyword>
+		            <keyword>mhpmcounter27</keyword>
+		            <keyword>mhpmcounter28</keyword>
+		            <keyword>mhpmcounter29</keyword>
+		            <keyword>mhpmcounter30</keyword>
+		            <keyword>mhpmcounter31</keyword>
+					
+					<keyword>mcycleh</keyword>
+					<keyword>minstreth</keyword>
+		            <keyword>mhpmcounter3h</keyword>
+		            <keyword>mhpmcounter4h</keyword>
+		            <keyword>mhpmcounter5h</keyword>
+		            <keyword>mhpmcounter6h</keyword>
+		            <keyword>mhpmcounter7h</keyword>
+		            <keyword>mhpmcounter8h</keyword>
+		            <keyword>mhpmcounter9h</keyword>
+		            <keyword>mhpmcounter10h</keyword>
+		            <keyword>mhpmcounter11h</keyword>
+		            <keyword>mhpmcounter12h</keyword>
+		            <keyword>mhpmcounter13h</keyword>
+		            <keyword>mhpmcounter14h</keyword>
+		            <keyword>mhpmcounter15h</keyword>
+		            <keyword>mhpmcounter16h</keyword>
+		            <keyword>mhpmcounter17h</keyword>
+		            <keyword>mhpmcounter18h</keyword>
+		            <keyword>mhpmcounter19h</keyword>
+		            <keyword>mhpmcounter20h</keyword>
+		            <keyword>mhpmcounter21h</keyword>
+		            <keyword>mhpmcounter22h</keyword>
+		            <keyword>mhpmcounter23h</keyword>
+		            <keyword>mhpmcounter24h</keyword>
+		            <keyword>mhpmcounter25h</keyword>
+		            <keyword>mhpmcounter26h</keyword>
+		            <keyword>mhpmcounter27h</keyword>
+		            <keyword>mhpmcounter28h</keyword>
+		            <keyword>mhpmcounter29h</keyword>
+		            <keyword>mhpmcounter30h</keyword>
+		            <keyword>mhpmcounter31h</keyword>
+
+					<keyword>mcountinhibit</keyword>
+		            <keyword>mhpmevent3</keyword>
+		            <keyword>mhpmevent4</keyword>
+		            <keyword>mhpmevent5</keyword>
+		            <keyword>mhpmevent6</keyword>
+		            <keyword>mhpmevent7</keyword>
+		            <keyword>mhpmevent8</keyword>
+		            <keyword>mhpmevent9</keyword>
+		            <keyword>mhpmevent10</keyword>
+		            <keyword>mhpmevent11</keyword>
+		            <keyword>mhpmevent12</keyword>
+		            <keyword>mhpmevent13</keyword>
+		            <keyword>mhpmevent14</keyword>
+		            <keyword>mhpmevent15</keyword>
+		            <keyword>mhpmevent16</keyword>
+		            <keyword>mhpmevent17</keyword>
+		            <keyword>mhpmevent18</keyword>
+		            <keyword>mhpmevent19</keyword>
+		            <keyword>mhpmevent20</keyword>
+		            <keyword>mhpmevent21</keyword>
+		            <keyword>mhpmevent22</keyword>
+		            <keyword>mhpmevent23</keyword>
+		            <keyword>mhpmevent24</keyword>
+		            <keyword>mhpmevent25</keyword>
+		            <keyword>mhpmevent26</keyword>
+		            <keyword>mhpmevent27</keyword>
+		            <keyword>mhpmevent28</keyword>
+		            <keyword>mhpmevent29</keyword>
+		            <keyword>mhpmevent30</keyword>
+		            <keyword>mhpmevent31</keyword>
+					<keyword>tselect</keyword>
+					<keyword>tdata1</keyword>
+					<keyword>tdata2</keyword>
+					<keyword>tdata3</keyword>
+					<keyword>dcsr</keyword>
+					<keyword>dpc</keyword>
+					<keyword>dscratch0</keyword>
+					<keyword>dscratch1</keyword>
         			
         		</context>
         		<context id="directives" style-ref="type">
-        			<prefix>\.?</prefix>
+        			<prefix>\.</prefix>
 					<keyword>align</keyword>
 					<keyword>file</keyword>
 					<keyword>globl</keyword>
