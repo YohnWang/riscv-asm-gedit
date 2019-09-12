@@ -25,10 +25,7 @@
 	<definitions>
 		<context id="riscv">
 			<include>
-				<context id="comment" style-ref="comment">
-					<start>@</start>
-					<end>$</end>
-				</context>
+				
 				<context id="string" end-at-line-end="true" style-ref="string">
 					<start>"</start>
 					<end>"</end>
@@ -87,102 +84,6 @@
 					<keyword>dret</keyword>
 					<keyword>ebreak</keyword>
 					<keyword>ecall</keyword>
-					<keyword>fadd</keyword>
-					<keyword>fadd</keyword>
-					<keyword>fadd</keyword>
-					<keyword>fclass</keyword>
-					<keyword>fclass</keyword>
-					<keyword>fclass</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fcvt</keyword>
-					<keyword>fdiv</keyword>
-					<keyword>fdiv</keyword>
-					<keyword>fdiv</keyword>
-					<keyword>fence</keyword>
-					<keyword>fence</keyword>
-					<keyword>feq</keyword>
-					<keyword>feq</keyword>
-					<keyword>feq</keyword>
-					<keyword>fld</keyword>
-					<keyword>fle</keyword>
-					<keyword>fle</keyword>
-					<keyword>fle</keyword>
-					<keyword>flq</keyword>
-					<keyword>flt</keyword>
-					<keyword>flt</keyword>
-					<keyword>flt</keyword>
-					<keyword>flw</keyword>
-					<keyword>fmadd</keyword>
-					<keyword>fmadd</keyword>
-					<keyword>fmadd</keyword>
-					<keyword>fmax</keyword>
-					<keyword>fmax</keyword>
-					<keyword>fmax</keyword>
-					<keyword>fmin</keyword>
-					<keyword>fmin</keyword>
-					<keyword>fmin</keyword>
-					<keyword>fmsub</keyword>
-					<keyword>fmsub</keyword>
-					<keyword>fmsub</keyword>
-					<keyword>fmul</keyword>
-					<keyword>fmul</keyword>
-					<keyword>fmul</keyword>
-					<keyword>fmv</keyword>
-					<keyword>fmv</keyword>
-					<keyword>fmv</keyword>
-					<keyword>fmv</keyword>
-					<keyword>fnmadd</keyword>
-					<keyword>fnmadd</keyword>
-					<keyword>fnmadd</keyword>
-					<keyword>fnmsub</keyword>
-					<keyword>fnmsub</keyword>
-					<keyword>fnmsub</keyword>
-					<keyword>fsd</keyword>
-					<keyword>fsgnjn</keyword>
-					<keyword>fsgnjn</keyword>
-					<keyword>fsgnjn</keyword>
-					<keyword>fsgnjx</keyword>
-					<keyword>fsgnjx</keyword>
-					<keyword>fsgnjx</keyword>
-					<keyword>fsgnj</keyword>
-					<keyword>fsgnj</keyword>
-					<keyword>fsgnj</keyword>
-					<keyword>fsq</keyword>
-					<keyword>fsqrt</keyword>
-					<keyword>fsqrt</keyword>
-					<keyword>fsqrt</keyword>
-					<keyword>fsub</keyword>
-					<keyword>fsub</keyword>
-					<keyword>fsub</keyword>
-					<keyword>fsw</keyword>
 					<keyword>jal</keyword>
 					<keyword>jalr</keyword>
 					<keyword>lb</keyword>
@@ -258,11 +159,38 @@
 					<keyword>jr</keyword>
 					<keyword>call</keyword>
 					<keyword>tail</keyword>
+					<keyword>scall</keyword>
 					<keyword>nop</keyword>
 					<keyword>mv</keyword>
 					<keyword>not</keyword>
 					<keyword>neg</keyword>
 					<keyword>negw</keyword>
+					<keyword>sext.w</keyword>
+					<keyword>seqz</keyword>
+					<keyword>snez</keyword>
+					<keyword>sltz</keyword>
+					<keyword>sgtz</keyword>
+					
+					<keyword>fmv.s</keyword>
+					<keyword>fabs.s</keyword>
+					<keyword>fneg.s</keyword>
+					<keyword>fmv.d</keyword>
+					<keyword>fabs.d</keyword>
+					<keyword>fneg.d</keyword>
+					<keyword>beqz</keyword>
+					<keyword>bnez</keyword> 
+					<keyword>blez</keyword> 
+					<keyword>bgez</keyword> 
+					<keyword>bltz</keyword> 
+					<keyword>bgtz</keyword>
+					
+					<keyword>rdtime</keyword>
+					<keyword>rdcycle</keyword>
+					<keyword>rdinstret</keyword>
+					<keyword>rdtimeh</keyword>
+					<keyword>rdcycleh</keyword>
+					<keyword>rdinstreth</keyword>
+
 				</context>
 				<context id="preprocessor" style-ref="preprocessor">
 					<prefix>^#</prefix>
@@ -277,7 +205,19 @@
         			<keyword>error</keyword>
         			<keyword>pragma</keyword>
         			<keyword>line</keyword>
+        			<keyword>include</keyword>
         		</context>
+        		
+        		<context id="comment-oneline" style-ref="comment">
+					<start>//</start>
+					<end>$</end>
+				</context>
+				
+				<context id="comment" style-ref="comment">
+					<start>#</start>
+					<end>$</end>
+				</context>
+        		
         		<context id="registers" style-ref="preprocessor">
         			<keyword>x[0-9]+</keyword>
         			<keyword>zero</keyword>
@@ -316,6 +256,46 @@
         			<keyword>mstatus</keyword>
         			<keyword>mepc</keyword>
         			<keyword>mtvec</keyword>
+        			
+        			<keyword>misa</keyword>
+        			<keyword>medeleg</keyword>
+        			<keyword>mideleg</keyword>
+        			<keyword>mie</keyword>
+        			<keyword>mcounteren</keyword>
+        			<keyword>mscratch</keyword>
+        			<keyword>mcause</keyword>
+        			<keyword>mtval</keyword>
+        			
+        			<keyword>mip</keyword>
+        			<keyword>mhartid</keyword>
+        			<keyword>marchid</keyword>
+        			<keyword>mcycle</keyword>
+        			<keyword>minstret</keyword>
+        			<keyword>mcycleh</keyword>
+        			
+        			<keyword>sstatus</keyword>
+        			<keyword>sedeleg</keyword>
+        			<keyword>sideleg</keyword>
+        			<keyword>sie</keyword>
+        			<keyword>stvec</keyword>
+        			<keyword>scounteren</keyword>
+        			<keyword>sscratch</keyword>
+        			<keyword>sepc</keyword>
+        			<keyword>scause</keyword>
+        			<keyword>stval</keyword>
+        			<keyword>sip</keyword>
+        			
+        			<keyword>ustatus</keyword>
+        			<keyword>uie</keyword>
+        			<keyword>utvec</keyword>
+        			
+        			<keyword>uscratch</keyword>
+        			<keyword>uepc</keyword>
+        			<keyword>ucause</keyword>
+        			<keyword>utval</keyword>
+        			<keyword>uip</keyword>
+        			
+        			
         		</context>
         		<context id="directives" style-ref="type">
         			<prefix>\.?</prefix>
