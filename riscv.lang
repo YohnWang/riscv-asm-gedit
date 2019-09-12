@@ -788,7 +788,7 @@
                 
                 
                 <context id="func" style-ref="function">
-                    <prefix>%?</prefix>
+                    <prefix>%</prefix>
                     <keyword>hi</keyword>
                     <keyword>lo</keyword>
                     <keyword>pcrel_hi</keyword>
