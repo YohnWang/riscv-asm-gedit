@@ -765,6 +765,8 @@
                     <keyword>zero</keyword>
 
                     <keyword>weak</keyword>
+                    <keyword>extern</keyword>
+                    <keyword>end</keyword>
                 </context>
 
                 <context id="optionargs" style-ref="function">
