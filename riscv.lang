@@ -728,6 +728,7 @@
                     <keyword>align</keyword>
                     <keyword>file</keyword>
                     <keyword>globl</keyword>
+                    <keyword>global</keyword>
                     <keyword>local</keyword>
                     <keyword>comm</keyword>
                     <keyword>common</keyword>
@@ -762,6 +763,15 @@
                     <keyword>p2align</keyword>
                     <keyword>balign</keyword>
                     <keyword>zero</keyword>
+
+                    <keyword>weak</keyword>
+                </context>
+
+                <context id="optionargs" style-ref="function">
+                    <keyword>rvc</keyword>
+                    <keyword>norvc</keyword>
+                    <keyword>push</keyword>
+                    <keyword>pop</keyword>
                 </context>
                 
                 <context id="numlabel" style-ref="function">
