@@ -5,6 +5,7 @@
     <metadata>
         <property name="mimetypes">text/x-riscv-asm</property>
         <property name="globs">*.S</property>
+        <property name="line-comment-start">#</property>
     </metadata>
 
     <styles>
